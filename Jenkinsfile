@@ -1,6 +1,10 @@
 pipeline {
   agent any
 
+  tools {
+    maven 'maven-3.8.8'  // Must match the "Name" you used
+  }
+
   stages {
     stage('Checkout') {
       steps {
@@ -8,7 +12,6 @@ pipeline {
       }
     }
 
-    
     stage('Build') {
       steps {
         sh 'mvn clean install'
