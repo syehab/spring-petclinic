@@ -5,13 +5,6 @@ pipeline {
     maven 'maven-3.9.7'//Maven tool
   }
 
-  stages {
-    stage('Checkout') {
-      steps {
-        checkout scm
-      }
-    }
-
     stage('Build') {
       steps {
         sh 'mvn clean install'
