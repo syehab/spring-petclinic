@@ -2,9 +2,10 @@ pipeline {
   agent any
 
   tools {
-    maven 'maven-3.9.7'//Maven tool
+    maven 'maven-3.9.7' // Maven tool configured in Jenkins
   }
 
+  stages {
     stage('Build') {
       steps {
         sh 'mvn clean install'
@@ -22,4 +23,5 @@ pipeline {
         sh 'mvn package'
       }
     }
+  }
 }
